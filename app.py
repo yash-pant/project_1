@@ -1,64 +1,94 @@
 import requests
 res = requests.get("https://www.goodreads.com/book/review_counts.json", params={"key": "FpgFJS5m78WDgqumLl2Q", "isbns": "9781632168146"})
 print(res.json())
-class Flight:   
+print("Welcome to your hotel bookings service!")
 
-    counter = 1
+("Please sign up to begin your journey to paradise: ")
+sorn = input("Please enter a username: ")
+sorn2 = input("Please enter a password: ")
+print("Now you will be sent back to the sign in page...")
 
-    def __init__(self, origin, destination, duration):
-
-        # Keep track of id number.
-        self.id = Flight.counter
-        Flight.counter += 1
-
-        # Keep track of passengers.
-        self.passengers = []
-
-        # Details about flight.
-        self.origin = origin
-        self.destination = destination
-        self.duration = duration
-
-    def print_info(self):
-        print(f"Flight origin: {self.origin}")
-        print(f"Flight destination: {self.destination}")
-        print(f"Flight duration: {self.duration}")
-
+name = input("Please sign in with your username: ")
+psrd = input(" Please enter in your password: ")
+if name == sorn and psrd == sorn2:
+    print("Congratualtions you have signed in")
+    print("Welcome to your hotel bookings service!")
+    while:
+        x = int(input("How many days will you be staying at your hotel for? "))
+        print("You have stated that you will be staying at your hotel for " + str(x) + " days. ")
         print()
-        print("Passengers:")
-        for passenger in self.passengers:
-            print(f"{passenger.name}")
+        y = int(input("How many people will stay with you? "))
+        print("You have stated that " + str(y) + " people will be staying with you.")
+        print()
+        if y == 1:
+            print("Your total will be $250 per night")
+        elif y == 2:
+            print("Your total wil be $300 per night")
+        elif y > 2 and y < 5:
+            print("Your total will be $400 per night")
+        else:
+            print("Your toal will be $500 per night")
+        print()
+        print("Please continue to the next page for your flight bookings.")
+        print()
+        class Flight:   
 
-    def delay(self, amount):
-        self.duration += amount
+            counter = 1
 
-    def add_passenger(self, p):
-        self.passengers.append(p)
-        p.flight_id = self.id
+            def __init__(self, origin, destination, duration):
+
+                # Keep track of id number.
+                self.id = Flight.counter
+                Flight.counter += 1
+
+                # Keep track of passengers.
+                self.passengers = []
+
+                # Details about flight.
+                self.origin = origin
+                self.destination = destination
+                self.duration = duration
+
+            def print_info(self):
+                print(f"Flight origin: {self.origin}")
+                print(f"Flight destination: {self.destination}")
+                print(f"Flight duration: {self.duration}")
+
+                print()
+                print("Passengers:")
+                for passenger in self.passengers:
+                    print(f"{passenger.name}")
+
+            def delay(self, amount):
+                self.duration += amount
+
+            def add_passenger(self, p):
+                self.passengers.append(p)
+                p.flight_id = self.id
 
 
-class Passenger:
+        class Passenger:
 
-    def __init__(self, name):
-        self.name = name
-
-
-def main():
-
-    # Create flight.
-    f1 = Flight(origin="New York", destination="Paris", duration=540)
-
-    # Create passengers.
-    alice = Passenger(name="Alice")
-    bob = Passenger(name="Bob")
-
-    # Add passengers.
-    f1.add_passenger(alice)
-    f1.add_passenger(bob)
-
-    f1.print_info()
+            def __init__(self, name):
+                self.name = name
 
 
-if __name__ == "__main__":
-    main()
+        def main():
+
+            # Create flight.
+            f1 = Flight(origin="New York", destination="Paris", duration=540)
+
+            # Create passengers.
+            alice = Passenger(name="Alice")
+            bob = Passenger(name="Bob")
+
+            # Add passengers.
+            f1.add_passenger(alice)
+            f1.add_passenger(bob)
+
+            f1.print_info()
+
+
+        if __name__ == "__main__":
+            main()
 
