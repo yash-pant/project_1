@@ -1,11 +1,12 @@
-import requests
-res = requests.get("https://www.goodreads.com/book/review_counts.json", params={"key": "FpgFJS5m78WDgqumLl2Q", "isbns": "9781632168146"})
-print(res.json())
+#import requests
+#res = requests.get("https://www.goodreads.com/book/review_counts.json", params={"key": "FpgFJS5m78WDgqumLl2Q", "isbns": "9781632168146"})
+#print(res.json())
 print("Welcome to your hotel bookings service!")
-
+print()
 ("Please sign up to begin your journey to paradise: ")
 sorn = input("Please enter a username: ")
 sorn2 = input("Please enter a password: ")
+print()
 print("Now you will be sent back to the sign in page...")
 
 name = input("Please sign in with your username: ")
@@ -13,7 +14,7 @@ psrd = input(" Please enter in your password: ")
 if name == sorn and psrd == sorn2:
     print("Congratualtions you have signed in")
     print("Welcome to your hotel bookings service!")
-    while:
+    while True:
         x = int(input("How many days will you be staying at your hotel for? "))
         print("You have stated that you will be staying at your hotel for " + str(x) + " days. ")
         print()
@@ -29,7 +30,28 @@ if name == sorn and psrd == sorn2:
         else:
             print("Your toal will be $500 per night")
         print()
+        print("a) New York")
+        print("b) London")
+        print("c) Amsterdam")
+        print("d) Addis Ababa")
+        z = input("Which of the above cities would you like to stay in? ")
+        if z == "a" or z == "A":
+            print()
+            print("You have chosen the destination as New York")
+        elif z == "b" or z == "B":
+            print()
+            print("You have chosen the destination as London")
+        elif z == "c" or z == "C":
+            print()
+            print("You have chosen the destination as Amsterdam")
+        elif z == "d" or z == "D":
+            print()
+            print("You have chosen the desitination as Addis Ababa")
+        print()
         print("Please continue to the next page for your flight bookings.")
+        print("We have found the ideal flight for you. ")
+        print()
+        print("This is your ideal flight and all of your information in it pre-prepared.")
         print()
         class Flight:   
 
@@ -91,4 +113,6 @@ if name == sorn and psrd == sorn2:
 
         if __name__ == "__main__":
             main()
-
+        break
+else:
+    print("Wrong username and password please try again.")
