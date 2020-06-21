@@ -10,7 +10,8 @@ print()
 print("Now you will be sent back to the sign in page...")
 
 name = input("Please sign in with your username: ")
-psrd = input(" Please enter in your password: ")
+psrd = input("Please enter in your password: ")
+print()
 if name == sorn and psrd == sorn2:
     print("Congratualtions you have signed in")
     print("Welcome to your hotel bookings service!")
